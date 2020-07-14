@@ -20,12 +20,12 @@
 
 <body>
 
-  <section class="section ">
-    <div class="container">
-      <div class="jumbotron bg-warning">
+  <section class="section pt-1">
+    <div class="container text-center">
+      <div class="jumbotron bg-warning pb-3 pt-3">
       <h1 class=" header text-center display-3">Simpsons Quotes</h1>
 
-      <a href="" class="btn btn-primary">New Quote</a>
+      <a href="" class="btn btn-primary mt-4">New Quote</a>
 
     </div>
 
@@ -56,13 +56,14 @@
       // Build a block of HTML
       const simpsonsHtml = 
       `
-      <div class="card bg-info m-auto" style="width: 20rem;">
-      <img class="card-img-top " src="${simpsons.image}" alt="Card image cap">
-      <div class="card-body">
-        <h3 class="card-title text-center text-warning">${simpsons.character}</h5>
+      <div class="card bg-dark m-auto" style="width: 20rem;">
+        <div class="card-body">
+        <h3 class="card-title text-center text-warning display-3">${simpsons.character}</h5>
         <h4 class="card-text text-center text-warning">${simpsons.quote}</p>
         
         </div>
+      <img class="card-img img-thumbnail" src="${simpsons.image}" alt="Card image cap">
+      
       </div>
       `
       document.querySelector('#simpsons').innerHTML = simpsonsHtml;

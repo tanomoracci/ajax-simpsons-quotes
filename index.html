@@ -13,16 +13,25 @@
     integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">   
   <style>
   </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
 </head>
 
 <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Simpsons Quotes</h1>
-      
 
-      <div class="content" id="simpsons">
+  <section class="section ">
+    <div class="container">
+      <div class="jumbotron bg-warning">
+      <h1 class=" header text-center display-3">Simpsons Quotes</h1>
+
+      <a href="" class="btn btn-primary">New Quote</a>
+
+    </div>
+
+      <div class="content m-auto" id="simpsons">
+
+
       </div>
     </div>
 
@@ -45,19 +54,29 @@
             console.log('data decoded from JSON:', simpsons);
 
       // Build a block of HTML
-      const simpsonsHtml = `
-        <h2> ${simpsons.quote} </h2>
-        <p><strong>${simpsons.character}</strong></p>
-        <img src="${simpsons.image}" />
-      `;
+      const simpsonsHtml = 
+      `
+      <div class="card bg-info m-auto" style="width: 20rem;">
+      <img class="card-img-top " src="${simpsons.image}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title text-center text-warning">${simpsons.character}</h5>
+        <h4 class="card-text text-center text-warning">${simpsons.quote}</p>
+        
+        </div>
+      </div>
+      `
       document.querySelector('#simpsons').innerHTML = simpsonsHtml;
+
     });
 }
 
 fetchSimpsonsJSON();
+
+document.getElementById("btn").addEventListener("click", function(){
+  fetchSimpsonsJSON();
+});
   </script>
 
-  
 </body>
 
 </html>
